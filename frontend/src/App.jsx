@@ -1,122 +1,102 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+      <nav>
+        <div className="logo">Utility Bill Manager</div>
+
+        <ul>
+          <li>Home</li>
+          <li>Bills</li>
+          <li>Payments</li>
+          <li>Profile</li>
+        </ul>
+      </nav>
+
+      <section className="hero">
+        <h1>Manage Your Electricity Bills Easily</h1>
+        <p>
+          Track bills, payment history, due dates and reminders in one place.
+        </p>
+
+        <button>Get Started</button>
       </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      <section className="cards">
+        <div className="card">
+          <h3>Total Bills</h3>
+          <p>12</p>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="card">
+          <h3>Pending Bills</h3>
+          <p>3</p>
+        </div>
+
+        <div className="card">
+          <h3>Paid Bills</h3>
+          <p>9</p>
+        </div>
+
+        <div className="card">
+          <h3>Total Amount</h3>
+          <p>₹8,450</p>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <section className="upcoming">
+        <h2>Upcoming Bills</h2>
+
+        <div className="bill">
+          <span>Electricity Bill</span>
+          <span>₹1,250</span>
+          <span>Due: 25 Sep 2026</span>
+        </div>
+
+        <div className="bill">
+          <span>Electricity Bill</span>
+          <span>₹980</span>
+          <span>Due: 10 Oct 2026</span>
+        </div>
+      </section>
+
+      <section className="payments">
+        <h2>Recent Payments</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Bill Type</th>
+              <th>Amount</th>
+              <th>Date</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Electricity</td>
+              <td>₹1200</td>
+              <td>15 Sep 2026</td>
+              <td>Paid</td>
+            </tr>
+
+            <tr>
+              <td>Electricity</td>
+              <td>₹980</td>
+              <td>10 Aug 2026</td>
+              <td>Paid</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer>
+        <p>© 2026 Utility Bill Manager. All Rights Reserved.</p>
+      </footer>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
